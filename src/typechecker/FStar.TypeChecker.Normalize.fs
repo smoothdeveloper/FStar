@@ -2939,8 +2939,9 @@ let rec elim_delayed_subst_term (t:term) : term =
       mk (Tm_let((fst lbs, List.map elim_lb (snd lbs)),
                   elim_delayed_subst_term t))
 
-    | Tm_uvar(u,s) ->
-      mk (Tm_uvar(u,s)) //explicitly don't descend into (bs,t) to not break sharing there
+    | Tm_uvar(u, s) ->
+      failwith "does this really happen?";
+      mk (Tm_uvar(u, s)) //explicitly don't descend into (bs,t) to not break sharing there
 
     | Tm_quoted (tm, qi) ->
       let qi = S.on_antiquoted elim_delayed_subst_term qi in
