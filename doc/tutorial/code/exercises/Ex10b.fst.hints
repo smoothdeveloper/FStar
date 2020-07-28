@@ -13,7 +13,7 @@
         "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "b99262cc4289ff7293a65ef738582906"
+      "4dd687923e5721914dbdc21bde0b5508"
     ],
     [
       "Ex10b.__proj__Point__item__y",
@@ -27,7 +27,7 @@
         "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "697dc47a6c421bb545164b6a4a8eafe4"
+      "26786b2735d987344865c9b1b6c9a0c1"
     ],
     [
       "Ex10b.__proj__Point__item__y",
@@ -43,7 +43,7 @@
         "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "d3fa5fc6f0a5691b03fded9177ff4980"
+      "ff90967b72d4b19776574a00dfc4c8ce"
     ],
     [
       "Ex10b.new_point",
@@ -57,7 +57,7 @@
         "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "05ec5aae2bb2562c163a8b47a4d50fa9"
+      "85806f41f6dda53eb0d1a2ff04d305de"
     ],
     [
       "Ex10b.new_point",
@@ -92,7 +92,7 @@
         "typing_FStar.Monotonic.Heap.addr_of", "typing_FStar.Set.empty"
       ],
       0,
-      "2fe41844deca6636a4bebfa2830a51a5"
+      "ca6bc65c4babbfdc998dcf8bbc3fe670"
     ],
     [
       "Ex10b.shift_x_p1",
@@ -106,7 +106,7 @@
         "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "1c9bd1e2f0208d98318aa0934ef794da"
+      "93f2664e73c227513150f44d8060e60d"
     ],
     [
       "Ex10b.shift_x_p1",
@@ -120,7 +120,7 @@
         "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "848f38a64e4e4810a8102f82151dff52"
+      "aaf0d79e51205b28e51621320912da7b"
     ],
     [
       "Ex10b.test",
@@ -148,79 +148,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "afcbc75bd5d657d1ef75fa5ae3eb8f32"
-    ],
-    [
-      "Ex10b.point",
-      1,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "equation_Prims.nat", "function_token_typing_Prims.int",
-        "haseqTm_refine_542f9d4f129664613f2483a6c88bc7c2",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
-      ],
-      0,
-      "0acc09f626d983ed316b5571da2a2237"
-    ],
-    [
-      "Ex10b.__proj__Point__item__y",
-      3,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "equation_Prims.nat", "function_token_typing_Prims.int",
-        "haseqTm_refine_542f9d4f129664613f2483a6c88bc7c2",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
-      ],
-      0,
-      "cea211886e176ea13cc254a9f7aea973"
-    ],
-    [
-      "Ex10b.__proj__Point__item__y",
-      4,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "equation_Prims.nat", "fuel_guarded_inversion_Ex10b.point",
-        "function_token_typing_Prims.int",
-        "haseqTm_refine_542f9d4f129664613f2483a6c88bc7c2",
-        "proj_equation_Ex10b.Point_x", "projection_inverse_Ex10b.Point_x",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
-      ],
-      0,
-      "f7d7310aa9273038e2295353a91d2797"
-    ],
-    [
-      "Ex10b.new_point",
-      3,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "equation_Prims.nat", "function_token_typing_Prims.int",
-        "haseqTm_refine_542f9d4f129664613f2483a6c88bc7c2",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
-      ],
-      0,
-      "33ecce0e9098e439273dc66727aec83c"
-    ],
-    [
-      "Ex10b.shift_x_p1",
-      3,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "equation_Prims.nat", "function_token_typing_Prims.int",
-        "haseqTm_refine_542f9d4f129664613f2483a6c88bc7c2",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
-      ],
-      0,
-      "d46b1c0996cfa461a665bfe01ac1937d"
+      "097b6c2dd4003bb9af79c94750e71044"
     ]
   ]
 ]

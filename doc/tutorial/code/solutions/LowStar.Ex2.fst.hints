@@ -46,7 +46,7 @@
         "typing_LowStar.Monotonic.Buffer.loc_union"
       ],
       0,
-      "6edad5e1f10af2d211d75c25276fc3e0"
+      "a5b8104714c86ddcab5a2a0d80838755"
     ],
     [
       "LowStar.Ex2.prefix_equal",
@@ -65,7 +65,7 @@
         "refinement_interpretation_Tm_refine_c97172742a96c0b17199622a0241325b"
       ],
       0,
-      "b64b2329f483c36b7bdb943b8d204f44"
+      "cdc7eed73351a2546aac306d56f758ee"
     ],
     [
       "LowStar.Ex2.copy_correct",
@@ -145,57 +145,7 @@
         "typing_LowStar.Monotonic.Buffer.loc_buffer"
       ],
       0,
-      "e062b8026b41fd1ed463bbd70659a603"
-    ],
-    [
-      "LowStar.Ex2.swap",
-      2,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query",
-        "constructor_distinct_FStar.Integers.Unsigned",
-        "constructor_distinct_FStar.Integers.W32",
-        "equality_tok_FStar.Integers.W32@tok",
-        "equation_FStar.Integers.int_t", "equation_Prims.eqtype",
-        "projection_inverse_FStar.Integers.Unsigned__0",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "typing_FStar.UInt32.t"
-      ],
-      0,
-      "b86af240cb841f20bc08d4f98bc7ddc0"
-    ],
-    [
-      "LowStar.Ex2.prefix_equal",
-      2,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_FStar.UInt.lte",
-        "equation_FStar.UInt32.lte",
-        "equation_LowStar.Buffer.trivial_preorder",
-        "equation_LowStar.Ex2.lbuffer",
-        "equation_LowStar.Monotonic.Buffer.length",
-        "primitive_Prims.op_LessThanOrEqual",
-        "projection_inverse_BoxBool_proj_0",
-        "refinement_interpretation_Tm_refine_058782b7d4bb5815b5309774af61e92e",
-        "refinement_interpretation_Tm_refine_c97172742a96c0b17199622a0241325b"
-      ],
-      0,
-      "5690793beb0fdf0cd74d74a41ba6bc64"
-    ],
-    [
-      "LowStar.Ex2.copy_correct",
-      2,
-      2,
-      1,
-      [
-        "@query", "equation_FStar.UInt.lte", "equation_FStar.UInt32.lte",
-        "primitive_Prims.op_LessThanOrEqual",
-        "projection_inverse_BoxBool_proj_0"
-      ],
-      0,
-      "788e722c35fc788c81259ee74ea56ff0"
+      "1ec8d4660f68bea699f89935a31de54b"
     ]
   ]
 ]

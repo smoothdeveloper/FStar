@@ -1,5 +1,5 @@
 [
-  "∆µ\u0004¿H®U~WõA»‹ÊV}",
+  "‡1•≤-PºÃ†+\u0006ß¥Oœ-",
   [
     [
       "Ex12b1.Format.append_inj_lemma",
@@ -12,7 +12,7 @@
         "typing_FStar.UInt8.t"
       ],
       0,
-      "afa43e0c6f85983d1e1579a5498ec5f6"
+      "8331965b05fbe303b73a451a317ac3c0"
     ],
     [
       "Ex12b1.Format.append_inj_lemma",
@@ -33,7 +33,7 @@
         "typing_FStar.UInt8.t"
       ],
       0,
-      "007aaa316788da2db269782b91731a10"
+      "8c885b7271f0a861232909af47079683"
     ],
     [
       "Ex12b1.Format.lemma_eq_intro",
@@ -47,7 +47,7 @@
         "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "e87a797b843defca84df0d5740c28ac8"
+      "58f93a5c7469a6f83c606cb22d83b990"
     ],
     [
       "Ex12b1.Format.lemma_eq_intro",
@@ -56,7 +56,7 @@
       1,
       [ "@query", "lemma_FStar.Seq.Base.lemma_eq_intro" ],
       0,
-      "22a4c35f6bd3fb925efd0e7dbc481bfa"
+      "83212bd3f6b6528bea71cbb91cbd5bdf"
     ],
     [
       "Ex12b1.Format.UTF8_inj",
@@ -69,7 +69,7 @@
         "typing_FStar.UInt8.t"
       ],
       0,
-      "d04a1bc5bed1cfd0da6daafa9e81c2f6"
+      "ef0e5524177c50673bf0eef9d9258780"
     ],
     [
       "Ex12b1.Format.uint16_to_bytes",
@@ -78,7 +78,7 @@
       1,
       [ "@query", "equation_Ex12b1.Format.uInt16" ],
       0,
-      "b5e4b37561b168277f5b770bf6427f6f"
+      "331f11346b371a356e8b8767f31a4d51"
     ],
     [
       "Ex12b1.Format.uint16_to_bytes",
@@ -87,7 +87,7 @@
       1,
       [ "@query", "equation_Ex12b1.Format.uInt16" ],
       0,
-      "fd817c019c58667bfe12bc7a5cf59fda"
+      "ee9b36637803cd2319ed8ec58b51b7a4"
     ],
     [
       "Ex12b1.Format.uint16_to_bytes",
@@ -103,7 +103,7 @@
         "refinement_interpretation_Ex12b1.Format_Tm_refine_9adbdccb31bd5d6d35b7a0e150a5d273"
       ],
       0,
-      "6c54c1cb3ca72f609049fc2aae4e7102"
+      "24d0137dbbbe1b56d8e6a9e06780e241"
     ],
     [
       "Ex12b1.Format.UINT16_inj",
@@ -118,7 +118,7 @@
         "typing_FStar.UInt8.t"
       ],
       0,
-      "601303d5826aafcdeaf40d6f8fe554d3"
+      "017e32182d81d3c295e70f37d872ebe6"
     ],
     [
       "Ex12b1.Format.response",
@@ -131,7 +131,7 @@
         "refinement_interpretation_Tm_refine_cab669ea2f01a509964765946e35daa0"
       ],
       0,
-      "1dfad59920e4a1adb0f3df2a8704739c"
+      "b09bfe6404a337b3fda9928086071ecc"
     ],
     [
       "Ex12b1.Format.req_resp_distinct",
@@ -143,7 +143,7 @@
         "equation_Ex12b1.Format.message"
       ],
       0,
-      "cf8012ee08bb7886efb86c84429b2645"
+      "2339d20a4c07d47807e6ae781d193467"
     ],
     [
       "Ex12b1.Format.req_injective",
@@ -156,7 +156,7 @@
         "typing_FStar.UInt8.t"
       ],
       0,
-      "9eded58c150e446ccc13ace570ec3683"
+      "4ceb6b104982343cd5f64229d2068690"
     ],
     [
       "Ex12b1.Format.resp_injective",
@@ -169,140 +169,7 @@
         "typing_FStar.UInt8.t"
       ],
       0,
-      "445ad3ed3e14a5c5f450f5d70ae050b2"
-    ],
-    [
-      "Ex12b1.Format.append_inj_lemma",
-      3,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "typing_FStar.UInt8.t"
-      ],
-      0,
-      "52a8e8c71d1d43e2559c9c86e12d2c63"
-    ],
-    [
-      "Ex12b1.Format.lemma_eq_intro",
-      3,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "equation_Prims.nat", "function_token_typing_Prims.int",
-        "haseqTm_refine_542f9d4f129664613f2483a6c88bc7c2",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
-      ],
-      0,
-      "2ae015d1c95c051208494db5dc1fdfd6"
-    ],
-    [
-      "Ex12b1.Format.UTF8_inj",
-      2,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "typing_FStar.UInt8.t"
-      ],
-      0,
-      "bd99b4bd1ffcfbe86acf75fad41eda1a"
-    ],
-    [
-      "Ex12b1.Format.uint16_to_bytes",
-      4,
-      2,
-      1,
-      [ "@query", "equation_Ex12b1.Format.uInt16" ],
-      0,
-      "325533340e65982a6d87c536b7a2dfe1"
-    ],
-    [
-      "Ex12b1.Format.uint16_to_bytes",
-      5,
-      2,
-      1,
-      [ "@query", "equation_Ex12b1.Format.uInt16" ],
-      0,
-      "de2208ed11c76cbf364e6c1783292cf3"
-    ],
-    [
-      "Ex12b1.Format.uint16_to_bytes",
-      6,
-      2,
-      1,
-      [ "@query", "equation_Ex12b1.Format.uInt16" ],
-      0,
-      "6c4b95b535d173f1ceca3822819daf42"
-    ],
-    [
-      "Ex12b1.Format.UINT16_inj",
-      2,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Ex12b1.Format.uInt16",
-        "equation_Ex12b1.Format.uint16", "equation_Prims.eqtype",
-        "refinement_interpretation_Tm_refine_159662fc0ccbdf710398c8946deb4040",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "typing_FStar.UInt8.t"
-      ],
-      0,
-      "c4f6c459dd9fc472dadba4f49ca33429"
-    ],
-    [
-      "Ex12b1.Format.response",
-      2,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Ex12b1.Format.string16",
-        "equation_Ex12b1.Format.uInt16", "projection_inverse_BoxInt_proj_0",
-        "refinement_interpretation_Tm_refine_cab669ea2f01a509964765946e35daa0"
-      ],
-      0,
-      "93cefc6e81ac76d2bd5350df4ff00990"
-    ],
-    [
-      "Ex12b1.Format.req_resp_distinct",
-      2,
-      2,
-      1,
-      [
-        "@query", "assumption_Platform.Bytes.HasEq_bytes",
-        "equation_Ex12b1.Format.message"
-      ],
-      0,
-      "8cb152e47f7017cb596172621ceb6b04"
-    ],
-    [
-      "Ex12b1.Format.req_injective",
-      2,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "typing_FStar.UInt8.t"
-      ],
-      0,
-      "99278f254f9121aa7f65d2dca7c43616"
-    ],
-    [
-      "Ex12b1.Format.resp_injective",
-      2,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
-        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "typing_FStar.UInt8.t"
-      ],
-      0,
-      "680e9ba99349f3bb29a98922c9f05960"
+      "152feea8c49ef0c468f129f70f9f47fd"
     ]
   ]
 ]
