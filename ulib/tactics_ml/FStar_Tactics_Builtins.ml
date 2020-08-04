@@ -118,6 +118,7 @@ let print                   = from_tac_1 B.print
 let debugging               = from_tac_1 B.debugging
 let dump                    = from_tac_1 B.dump
 let trefl                   = from_tac_1 B.trefl
+let trefl_with_guard        = from_tac_1 B.trefl_with_guard
 let dup                     = from_tac_1 B.dup
 let prune                   = from_tac_1 B.prune
 let addns                   = from_tac_1 B.addns

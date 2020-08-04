@@ -62,6 +62,7 @@ val print                  : string -> tac<unit>
 val debugging              : unit -> tac<bool>
 val dump                   : string -> tac<unit>
 val trefl                  : unit -> tac<unit>
+val trefl_with_guard       : unit -> tac<unit>
 val dup                    : unit -> tac<unit>
 val prune                  : string -> tac<unit>
 val addns                  : string -> tac<unit>

@@ -370,6 +370,10 @@ let () =
         trefl   e_unit e_unit
         trefl   NBET.e_unit NBET.e_unit;
 
+      mk_tac_step_1 0 "trefl_with_guard"
+        trefl_with_guard   e_unit e_unit
+        trefl_with_guard   NBET.e_unit NBET.e_unit;
+
       mk_tac_step_1 0 "dup"
         dup     e_unit e_unit
         dup     NBET.e_unit NBET.e_unit;

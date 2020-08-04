@@ -192,10 +192,16 @@ assume val debugging : unit -> Tac bool
 along with the message. *)
 assume val dump : string -> Tac unit
 
-(** Solves a goal [Gamma |= squash (l == r)] by attempting to unify
-[l] with [r]. This currently only exists because of some universe problems
-when trying to [apply] a reflexivity lemma. *)
+(** Solves a goal [Gamma |= squash (l == r)] by attempting to unify [l]
+with [r]. Unification cannot use logical facts: this will not add new
+goals, nor call the SMT. This currently only exists because of some
+universe problems when trying to [apply] a reflexivity lemma. *)
 assume val trefl : unit -> Tac unit
+
+(** As [trefl], but more general in that it can return a guard (as a new
+goal) with a VC for the unification to succeed. The guard can then be
+processed as needed. *)
+assume val trefl_with_guard : unit -> Tac unit
 
 (** [ctrl_rewrite] will traverse the current goal, and call [ctrl]
  * repeatedly on subterms. When [ctrl t] returns [(true, _)], the
