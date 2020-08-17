@@ -614,16 +614,29 @@ let (generalize' :
                                  uu____1984 uu____1985 uu____1986 uu____1987
                                  uu____1988))
                  else ());
+                FStar_All.pipe_right luecs
+                  (FStar_List.iter
+                     (fun uu____2029 ->
+                        match uu____2029 with
+                        | (l, uu____2045, uu____2046, uu____2047, gvs) ->
+                            let uu____2057 =
+                              FStar_Util.string_of_int
+                                (FStar_List.length gvs) in
+                            let uu____2058 =
+                              FStar_Syntax_Print.lbname_to_string l in
+                            FStar_Util.print2
+                              "ZZZZZ Generalized %s variables for %s\n"
+                              uu____2057 uu____2058));
                 luecs) in
          FStar_List.map2
            (fun univnames ->
-              fun uu____2029 ->
-                match uu____2029 with
+              fun uu____2098 ->
+                match uu____2098 with
                 | (l, generalized_univs, t, c, gvs) ->
-                    let uu____2073 =
+                    let uu____2142 =
                       check_universe_generalization univnames
                         generalized_univs t in
-                    (l, uu____2073, t, c, gvs)) univnames_lecs
+                    (l, uu____2142, t, c, gvs)) univnames_lecs
            generalized_lecs)
 let (generalize :
   FStar_TypeChecker_Env.env ->
@@ -637,11 +650,11 @@ let (generalize :
   fun env ->
     fun is_rec ->
       fun lecs ->
-        let uu____2125 =
-          let uu____2128 =
-            let uu____2129 = FStar_TypeChecker_Env.current_module env in
-            FStar_Ident.string_of_lid uu____2129 in
-          FStar_Pervasives_Native.Some uu____2128 in
+        let uu____2194 =
+          let uu____2197 =
+            let uu____2198 = FStar_TypeChecker_Env.current_module env in
+            FStar_Ident.string_of_lid uu____2198 in
+          FStar_Pervasives_Native.Some uu____2197 in
         FStar_Profiling.profile
-          (fun uu____2145 -> generalize' env is_rec lecs) uu____2125
+          (fun uu____2214 -> generalize' env is_rec lecs) uu____2194
           "FStar.TypeChecker.Util.generalize"
