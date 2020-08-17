@@ -277,12 +277,17 @@ let generalize' env (is_rec:bool) (lecs:list<(lbname*term*comp)>) : (list<(lbnam
                                           (Print.term_to_string (U.comp_result c))
                                           (Print.term_to_string e)
                                           (Print.binders_to_string ", " gvs));
+            luecs |> List.iter (fun (l, _, _, _, gvs) ->
+              BU.print2 "ZZZZZ Generalized %s variables for %s\n"
+                                            (string_of_int (List.length gvs))
+                                            (Print.lbname_to_string l));
             luecs
-   in
-   List.map2 (fun univnames (l,generalized_univs, t, c, gvs) ->
-              (l, check_universe_generalization univnames generalized_univs t, t, c, gvs))
-             univnames_lecs
-             generalized_lecs
+  in
+
+  List.map2 (fun univnames (l,generalized_univs, t, c, gvs) ->
+             (l, check_universe_generalization univnames generalized_univs t, t, c, gvs))
+            univnames_lecs
+            generalized_lecs
 
 let generalize env is_rec lecs = 
   Profiling.profile (fun () -> generalize' env is_rec lecs)
