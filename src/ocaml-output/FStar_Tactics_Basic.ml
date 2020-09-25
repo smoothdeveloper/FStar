@@ -551,7 +551,9 @@ let (fresh : unit -> FStar_BigInt.t FStar_Tactics_Monad.tac) =
              FStar_Tactics_Types.tac_verb_dbg =
                (uu___1.FStar_Tactics_Types.tac_verb_dbg);
              FStar_Tactics_Types.local_state =
-               (uu___1.FStar_Tactics_Types.local_state)
+               (uu___1.FStar_Tactics_Types.local_state);
+             FStar_Tactics_Types.urgency =
+               (uu___1.FStar_Tactics_Types.urgency)
            } in
          let uu___1 = FStar_Tactics_Monad.set ps1 in
          FStar_Tactics_Monad.bind uu___1
@@ -1114,7 +1116,9 @@ let (set_guard_policy :
               FStar_Tactics_Types.tac_verb_dbg =
                 (uu___.FStar_Tactics_Types.tac_verb_dbg);
               FStar_Tactics_Types.local_state =
-                (uu___.FStar_Tactics_Types.local_state)
+                (uu___.FStar_Tactics_Types.local_state);
+              FStar_Tactics_Types.urgency =
+                (uu___.FStar_Tactics_Types.urgency)
             }))
 let with_policy :
   'a .
@@ -1363,7 +1367,9 @@ let divide :
                           FStar_Tactics_Types.tac_verb_dbg =
                             (uu___2.FStar_Tactics_Types.tac_verb_dbg);
                           FStar_Tactics_Types.local_state =
-                            (uu___2.FStar_Tactics_Types.local_state)
+                            (uu___2.FStar_Tactics_Types.local_state);
+                          FStar_Tactics_Types.urgency =
+                            (uu___2.FStar_Tactics_Types.urgency)
                         } in
                       let uu___2 = FStar_Tactics_Monad.set lp in
                       FStar_Tactics_Monad.bind uu___2
@@ -1397,7 +1403,9 @@ let divide :
                                          FStar_Tactics_Types.tac_verb_dbg =
                                            (uu___4.FStar_Tactics_Types.tac_verb_dbg);
                                          FStar_Tactics_Types.local_state =
-                                           (uu___4.FStar_Tactics_Types.local_state)
+                                           (uu___4.FStar_Tactics_Types.local_state);
+                                         FStar_Tactics_Types.urgency =
+                                           (uu___4.FStar_Tactics_Types.urgency)
                                        } in
                                      let uu___4 = FStar_Tactics_Monad.set rp in
                                      FStar_Tactics_Monad.bind uu___4
@@ -1451,7 +1459,10 @@ let divide :
                                                           (uu___6.FStar_Tactics_Types.tac_verb_dbg);
                                                         FStar_Tactics_Types.local_state
                                                           =
-                                                          (uu___6.FStar_Tactics_Types.local_state)
+                                                          (uu___6.FStar_Tactics_Types.local_state);
+                                                        FStar_Tactics_Types.urgency
+                                                          =
+                                                          (uu___6.FStar_Tactics_Types.urgency)
                                                       } in
                                                     let uu___6 =
                                                       FStar_Tactics_Monad.set
@@ -3606,7 +3617,9 @@ let (join : unit -> unit FStar_Tactics_Monad.tac) =
                     FStar_Tactics_Types.tac_verb_dbg =
                       (uu___2.FStar_Tactics_Types.tac_verb_dbg);
                     FStar_Tactics_Types.local_state =
-                      (uu___2.FStar_Tactics_Types.local_state)
+                      (uu___2.FStar_Tactics_Types.local_state);
+                    FStar_Tactics_Types.urgency =
+                      (uu___2.FStar_Tactics_Types.urgency)
                   }) in
              FStar_Tactics_Monad.bind uu___1
                (fun uu___2 ->
@@ -5175,10 +5188,43 @@ let (lset :
                      (uu___1.FStar_Tactics_Types.freshness);
                    FStar_Tactics_Types.tac_verb_dbg =
                      (uu___1.FStar_Tactics_Types.tac_verb_dbg);
-                   FStar_Tactics_Types.local_state = uu___2
+                   FStar_Tactics_Types.local_state = uu___2;
+                   FStar_Tactics_Types.urgency =
+                     (uu___1.FStar_Tactics_Types.urgency)
                  } in
                FStar_Tactics_Monad.set ps1) in
         FStar_All.pipe_left (FStar_Tactics_Monad.wrap_err "lset") uu___
+let (set_urgency : FStar_BigInt.t -> unit FStar_Tactics_Monad.tac) =
+  fun u ->
+    FStar_Tactics_Monad.bind FStar_Tactics_Monad.get
+      (fun ps ->
+         let ps1 =
+           let uu___ = ps in
+           let uu___1 = FStar_BigInt.to_int_fs u in
+           {
+             FStar_Tactics_Types.main_context =
+               (uu___.FStar_Tactics_Types.main_context);
+             FStar_Tactics_Types.all_implicits =
+               (uu___.FStar_Tactics_Types.all_implicits);
+             FStar_Tactics_Types.goals = (uu___.FStar_Tactics_Types.goals);
+             FStar_Tactics_Types.smt_goals =
+               (uu___.FStar_Tactics_Types.smt_goals);
+             FStar_Tactics_Types.depth = (uu___.FStar_Tactics_Types.depth);
+             FStar_Tactics_Types.__dump = (uu___.FStar_Tactics_Types.__dump);
+             FStar_Tactics_Types.psc = (uu___.FStar_Tactics_Types.psc);
+             FStar_Tactics_Types.entry_range =
+               (uu___.FStar_Tactics_Types.entry_range);
+             FStar_Tactics_Types.guard_policy =
+               (uu___.FStar_Tactics_Types.guard_policy);
+             FStar_Tactics_Types.freshness =
+               (uu___.FStar_Tactics_Types.freshness);
+             FStar_Tactics_Types.tac_verb_dbg =
+               (uu___.FStar_Tactics_Types.tac_verb_dbg);
+             FStar_Tactics_Types.local_state =
+               (uu___.FStar_Tactics_Types.local_state);
+             FStar_Tactics_Types.urgency = uu___1
+           } in
+         FStar_Tactics_Monad.set ps1)
 let (goal_of_goal_ty :
   env ->
     FStar_Reflection_Data.typ ->
@@ -5520,7 +5566,8 @@ let (proofstate_of_goals :
               FStar_Tactics_Types.guard_policy = FStar_Tactics_Types.SMT;
               FStar_Tactics_Types.freshness = Prims.int_zero;
               FStar_Tactics_Types.tac_verb_dbg = uu___;
-              FStar_Tactics_Types.local_state = uu___1
+              FStar_Tactics_Types.local_state = uu___1;
+              FStar_Tactics_Types.urgency = Prims.int_one
             } in
           ps
 let (proofstate_of_goal_ty :
@@ -5674,6 +5721,7 @@ let (proofstate_of_all_implicits :
             FStar_Tactics_Types.guard_policy = FStar_Tactics_Types.SMT;
             FStar_Tactics_Types.freshness = Prims.int_zero;
             FStar_Tactics_Types.tac_verb_dbg = uu___;
-            FStar_Tactics_Types.local_state = uu___1
+            FStar_Tactics_Types.local_state = uu___1;
+            FStar_Tactics_Types.urgency = Prims.int_one
           } in
         (ps, w)

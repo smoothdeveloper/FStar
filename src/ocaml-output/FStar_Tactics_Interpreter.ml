@@ -1389,7 +1389,23 @@ let (uu___143 : unit) =
                                                                     FStar_TypeChecker_NBETerm.e_string
                                                                     FStar_TypeChecker_NBETerm.e_any
                                                                     FStar_TypeChecker_NBETerm.e_unit in
-                                                                    [uu___130] in
+                                                                    let uu___131
+                                                                    =
+                                                                    let uu___132
+                                                                    =
+                                                                    FStar_Tactics_InterpFuns.mk_tac_step_1
+                                                                    Prims.int_one
+                                                                    "set_urgency"
+                                                                    FStar_Tactics_Basic.set_urgency
+                                                                    FStar_Syntax_Embeddings.e_int
+                                                                    FStar_Syntax_Embeddings.e_unit
+                                                                    FStar_Tactics_Basic.set_urgency
+                                                                    FStar_TypeChecker_NBETerm.e_int
+                                                                    FStar_TypeChecker_NBETerm.e_unit in
+                                                                    [uu___132] in
+                                                                    uu___130
+                                                                    ::
+                                                                    uu___131 in
                                                                     uu___128
                                                                     ::
                                                                     uu___129 in
