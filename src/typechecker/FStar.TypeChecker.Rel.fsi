@@ -72,3 +72,7 @@ val universe_inequality : universe -> universe -> guard_t
 
 val subtype_fail: env -> term -> typ -> typ -> unit
 val print_pending_implicits: guard_t -> string
+
+
+(* Only used from Meta-F*. *)
+val discharge_guard' : option<(unit -> string)> -> env -> guard_t -> bool -> option<guard_t>
