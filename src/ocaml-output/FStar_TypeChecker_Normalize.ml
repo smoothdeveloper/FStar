@@ -2705,8 +2705,7 @@ let rec (norm :
                            (uu___4.FStar_TypeChecker_Cfg.primitive_steps);
                          FStar_TypeChecker_Cfg.strong =
                            (uu___4.FStar_TypeChecker_Cfg.strong);
-                         FStar_TypeChecker_Cfg.memoize_lazy =
-                           (uu___4.FStar_TypeChecker_Cfg.memoize_lazy);
+                         FStar_TypeChecker_Cfg.memoize_lazy = false;
                          FStar_TypeChecker_Cfg.normalize_pure_lets = true;
                          FStar_TypeChecker_Cfg.reifying =
                            (uu___4.FStar_TypeChecker_Cfg.reifying)
