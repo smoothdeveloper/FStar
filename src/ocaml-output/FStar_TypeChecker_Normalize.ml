@@ -36,6 +36,16 @@ let (uu___is_Dummy : closure -> Prims.bool) =
 type env =
   (FStar_Syntax_Syntax.binder FStar_Pervasives_Native.option * closure)
     Prims.list
+let rec (drop_memos : env -> unit) =
+  fun e ->
+    let drop1 uu___ =
+      match uu___ with
+      | (bo, c) ->
+          (match c with
+           | Clos (e1, t, memo, b) ->
+               FStar_ST.op_Colon_Equals memo FStar_Pervasives_Native.None
+           | uu___1 -> ()) in
+    FStar_List.iter drop1 e
 let (dummy :
   (FStar_Syntax_Syntax.binder FStar_Pervasives_Native.option * closure)) =
   (FStar_Pervasives_Native.None, Dummy)
@@ -2705,7 +2715,8 @@ let rec (norm :
                            (uu___4.FStar_TypeChecker_Cfg.primitive_steps);
                          FStar_TypeChecker_Cfg.strong =
                            (uu___4.FStar_TypeChecker_Cfg.strong);
-                         FStar_TypeChecker_Cfg.memoize_lazy = false;
+                         FStar_TypeChecker_Cfg.memoize_lazy =
+                           (uu___4.FStar_TypeChecker_Cfg.memoize_lazy);
                          FStar_TypeChecker_Cfg.normalize_pure_lets = true;
                          FStar_TypeChecker_Cfg.reifying =
                            (uu___4.FStar_TypeChecker_Cfg.reifying)
@@ -6797,7 +6808,8 @@ and (rebuild :
                         uu___4 uu___5 uu___6 uu___7)
                    else ();
                    rebuild cfg env1 stack2 t1)
-              | (Cfg cfg1)::stack2 -> rebuild cfg1 env1 stack2 t1
+              | (Cfg cfg1)::stack2 ->
+                  (drop_memos env1; rebuild cfg1 env1 stack2 t1)
               | (Meta (uu___3, m, r))::stack2 ->
                   let t2 =
                     FStar_Syntax_Syntax.mk
