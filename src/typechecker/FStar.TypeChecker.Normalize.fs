@@ -1136,6 +1136,7 @@ let rec norm : cfg -> env -> stack -> term -> term =
                 else [NoDelta] in
               let cfg' = {cfg with steps = ({ to_fsteps s with in_full_norm_request=true})
                                ; delta_level = delta_level
+                               ; memoize_lazy = false
                                ; normalize_pure_lets = true } in
               let stack' =
                 let tail = (Cfg cfg)::stack in
