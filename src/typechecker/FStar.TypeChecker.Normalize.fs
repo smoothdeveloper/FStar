@@ -66,6 +66,14 @@ type closure =
   | Dummy                                          //Dummy is a placeholder for a binder when doing strong reduction
 and env = list<(option<binder>*closure)>
 
+let rec drop_memos (e:env) : unit =
+  let drop1 ((bo, c) :option<binder> * closure) =
+    match c with
+    | Clos (e, t, memo, b) -> memo := None
+    | _ -> ()
+  in
+  List.iter drop1 e
+
 let dummy : option<binder> * closure = None,Dummy
 
 type branches = list<(pat * option<term> * term)>
@@ -1136,7 +1144,7 @@ let rec norm : cfg -> env -> stack -> term -> term =
                 else [NoDelta] in
               let cfg' = {cfg with steps = ({ to_fsteps s with in_full_norm_request=true})
                                ; delta_level = delta_level
-                               ; memoize_lazy = false
+                               (* ; memoize_lazy = false *)
                                ; normalize_pure_lets = true } in
               let stack' =
                 let tail = (Cfg cfg)::stack in
@@ -2397,6 +2405,7 @@ and rebuild (cfg:cfg) (env:env) (stack:stack) (t:term) : term =
         rebuild cfg env stack t
 
       | Cfg cfg :: stack ->
+        drop_memos env;
         rebuild cfg env stack t
 
       | Meta(_, m, r)::stack ->
