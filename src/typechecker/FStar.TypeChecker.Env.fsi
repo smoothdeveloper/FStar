@@ -55,6 +55,8 @@ type step =
   | Unascribe
   | NBE
   | ForExtraction   //marking an invocation of the normalizer for extraction
+  | OnExtractionOnly // only used for norm requests, to mark that they should be
+                     // only interpreted at extraction time
 and steps = list<step>
 
 val eq_step : step -> step -> bool

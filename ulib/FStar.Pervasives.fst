@@ -98,6 +98,7 @@ type norm_step =
   // idem
   | UnfoldFully : list string -> norm_step
   | UnfoldAttr : list string -> norm_step // Unfold definitions marked with the given attributes
+  | OnExtractionOnly
 
 let simplify = Simpl
 
@@ -108,6 +109,8 @@ let hnf = HNF
 let primops = Primops
 
 let delta = Delta
+
+let on_extraction_only = OnExtractionOnly
 
 let zeta = Zeta
 

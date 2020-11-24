@@ -179,6 +179,7 @@ let fstep_add_one s fs =
     | Unascribe ->  { fs with unascribe = true }
     | NBE -> {fs with nbe_step = true }
     | ForExtraction -> {fs with for_extraction = true }
+    | OnExtractionOnly -> fs (* ignored *)
 
 let to_fsteps (s : list<step>) : fsteps =
     List.fold_right fstep_add_one s default_steps

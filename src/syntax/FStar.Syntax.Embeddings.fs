@@ -580,6 +580,7 @@ type norm_step =
     | UnfoldFully of list<string>
     | UnfoldAttr  of list<string>
     | NBE
+    | OnExtractionOnly
 
 (* the steps as terms *)
 let steps_Simpl         = tconst PC.steps_simpl
@@ -595,6 +596,7 @@ let steps_UnfoldOnly    = tconst PC.steps_unfoldonly
 let steps_UnfoldFully   = tconst PC.steps_unfoldonly
 let steps_UnfoldAttr    = tconst PC.steps_unfoldattr
 let steps_NBE           = tconst PC.steps_nbe
+let steps_OnExtractionOnly = tconst PC.steps_on_extraction_only
 
 let e_norm_step =
     let t_norm_step = U.fvar_const (Ident.lid_of_str "FStar.Syntax.Embeddings.norm_step") in
@@ -625,8 +627,6 @@ let e_norm_step =
                     steps_ZetaFull
                 | Iota ->
                     steps_Iota
-                | NBE ->
-                    steps_NBE
                 | Reify ->
                     steps_Reify
                 | UnfoldOnly l ->
@@ -638,6 +638,10 @@ let e_norm_step =
                 | UnfoldAttr l ->
                     S.mk_Tm_app steps_UnfoldAttr [S.as_arg (embed (e_list e_string) l rng None norm)]
                                 rng
+                | NBE ->
+                    steps_NBE
+                | OnExtractionOnly ->
+                    steps_OnExtractionOnly
                 )
     in
     let un (t0:term) (w:bool) norm : option<norm_step> =
@@ -679,6 +683,8 @@ let e_norm_step =
                 | Tm_fvar fv, [(l, _)] when S.fv_eq_lid fv PC.steps_unfoldattr ->
                     BU.bind_opt (unembed (e_list e_string) l w norm) (fun ss ->
                     Some <| UnfoldAttr ss)
+                | Tm_fvar fv, [] when S.fv_eq_lid fv PC.steps_on_extraction_only ->
+                    Some OnExtractionOnly
                 | _ ->
                     if w then
                     Err.log_issue t0.pos (Err.Warning_NotEmbedded, (BU.format1 "Not an embedded norm_step: %s" (Print.term_to_string t0)));

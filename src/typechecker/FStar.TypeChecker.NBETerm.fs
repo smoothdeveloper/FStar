@@ -671,6 +671,8 @@ let e_norm_step =
         | SE.UnfoldAttr l ->
                      mkFV (lid_as_fv PC.steps_unfoldattr S.delta_constant None)
                           [] [as_arg (embed (e_list e_string) cb l)]
+        | SE.OnExtractionOnly ->
+          mkFV (lid_as_fv PC.steps_on_extraction_only S.delta_constant None) [] []
     in
     let un cb (t0:t) : option<SE.norm_step> =
         match t0.nbe_t with
@@ -701,6 +703,8 @@ let e_norm_step =
         | FV (fv, _, [(l, _)]) when S.fv_eq_lid fv PC.steps_unfoldattr ->
             BU.bind_opt (unembed (e_list e_string) cb l) (fun ss ->
             Some <| SE.UnfoldAttr ss)
+        | FV (fv, _, []) when S.fv_eq_lid fv PC.steps_on_extraction_only ->
+            Some SE.OnExtractionOnly
         | _ ->
             Errors.log_issue Range.dummyRange (Errors.Warning_NotEmbedded, (BU.format1 "Not an embedded norm_step: %s" (t_to_string t0)));
             None

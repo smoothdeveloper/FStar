@@ -304,6 +304,7 @@ let steps_unfoldonly    = psconst "delta_only"
 let steps_unfoldfully   = psconst "delta_fully"
 let steps_unfoldattr    = psconst "delta_attr"
 let steps_nbe           = psconst "nbe"
+let steps_on_extraction_only = psconst "on_extraction_only"
 
 (* attributes *)
 let deprecated_attr = pconst "deprecated"

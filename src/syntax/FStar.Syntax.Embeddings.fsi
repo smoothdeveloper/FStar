@@ -26,6 +26,7 @@ type norm_step =
     | UnfoldFully of list<string>
     | UnfoldAttr  of list<string>
     | NBE
+    | OnExtractionOnly
 
 val steps_Simpl         : term
 val steps_Weak          : term

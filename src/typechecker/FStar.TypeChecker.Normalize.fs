@@ -729,6 +729,7 @@ let tr_norm_step = function
     | EMB.UnfoldAttr names ->
         [UnfoldUntil delta_constant; UnfoldAttr (List.map I.lid_of_str names)]
     | EMB.NBE -> [NBE]
+    | EMB.OnExtractionOnly -> [OnExtractionOnly]
 
 let tr_norm_steps s =
     let s = List.concatMap tr_norm_step s in
@@ -738,7 +739,7 @@ let tr_norm_steps s =
     let s = add_exclude s Iota in
     s
 
-let get_norm_request cfg (full_norm:term -> term) args =
+let get_norm_request cfg (full_norm:term -> term) args : option<(steps * term)> =
     let parse_steps s =
       match try_unembed_simple (EMB.e_list EMB.e_norm_step) s with
       | Some steps -> Some (tr_norm_steps steps)
@@ -758,7 +759,10 @@ let get_norm_request cfg (full_norm:term -> term) args =
       begin
       match parse_steps (full_norm steps) with
       | None -> None
-      | Some s -> Some (inherited_steps @ s, tm)
+      | Some s ->
+        if List.mem OnExtractionOnly s && not (cfg.steps.for_extraction)
+        then None
+        else Some (inherited_steps @ s, tm)
       end
     | _ ->
       None
