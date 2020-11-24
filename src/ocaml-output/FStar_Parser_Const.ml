@@ -246,6 +246,8 @@ let (steps_unfoldonly : FStar_Ident.lident) = psconst "delta_only"
 let (steps_unfoldfully : FStar_Ident.lident) = psconst "delta_fully"
 let (steps_unfoldattr : FStar_Ident.lident) = psconst "delta_attr"
 let (steps_nbe : FStar_Ident.lident) = psconst "nbe"
+let (steps_on_extraction_only : FStar_Ident.lident) =
+  psconst "on_extraction_only"
 let (deprecated_attr : FStar_Ident.lident) = pconst "deprecated"
 let (warn_on_use_attr : FStar_Ident.lident) = pconst "warn_on_use"
 let (inline_let_attr : FStar_Ident.lident) =

@@ -1262,7 +1262,13 @@ let (e_norm_step : FStar_Syntax_Embeddings.norm_step embedding) =
             let uu___3 = let uu___4 = e_list e_string in embed uu___4 cb l in
             as_arg uu___3 in
           [uu___2] in
-        mkFV uu___ [] uu___1 in
+        mkFV uu___ [] uu___1
+    | FStar_Syntax_Embeddings.OnExtractionOnly ->
+        let uu___ =
+          FStar_Syntax_Syntax.lid_as_fv
+            FStar_Parser_Const.steps_on_extraction_only
+            FStar_Syntax_Syntax.delta_constant FStar_Pervasives_Native.None in
+        mkFV uu___ [] [] in
   let un cb t0 =
     match t0.nbe_t with
     | FV (fv, uu___, []) when
@@ -1319,6 +1325,11 @@ let (e_norm_step : FStar_Syntax_Embeddings.norm_step embedding) =
              FStar_All.pipe_left
                (fun uu___3 -> FStar_Pervasives_Native.Some uu___3)
                (FStar_Syntax_Embeddings.UnfoldAttr ss))
+    | FV (fv, uu___, []) when
+        FStar_Syntax_Syntax.fv_eq_lid fv
+          FStar_Parser_Const.steps_on_extraction_only
+        ->
+        FStar_Pervasives_Native.Some FStar_Syntax_Embeddings.OnExtractionOnly
     | uu___ ->
         ((let uu___2 =
             let uu___3 =

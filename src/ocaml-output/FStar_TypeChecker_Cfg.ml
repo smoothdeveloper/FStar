@@ -1385,6 +1385,7 @@ let (fstep_add_one : FStar_TypeChecker_Env.step -> fsteps -> fsteps) =
             nbe_step = (uu___.nbe_step);
             for_extraction = true
           }
+      | FStar_TypeChecker_Env.OnExtractionOnly -> fs
 let (to_fsteps : FStar_TypeChecker_Env.step Prims.list -> fsteps) =
   fun s -> FStar_List.fold_right fstep_add_one s default_steps
 type psc =

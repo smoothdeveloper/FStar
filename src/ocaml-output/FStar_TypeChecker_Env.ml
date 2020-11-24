@@ -28,6 +28,7 @@ type step =
   | Unascribe 
   | NBE 
   | ForExtraction 
+  | OnExtractionOnly 
 let (uu___is_Beta : step -> Prims.bool) =
   fun projectee -> match projectee with | Beta -> true | uu___ -> false
 let (uu___is_Iota : step -> Prims.bool) =
@@ -108,6 +109,9 @@ let (uu___is_NBE : step -> Prims.bool) =
 let (uu___is_ForExtraction : step -> Prims.bool) =
   fun projectee ->
     match projectee with | ForExtraction -> true | uu___ -> false
+let (uu___is_OnExtractionOnly : step -> Prims.bool) =
+  fun projectee ->
+    match projectee with | OnExtractionOnly -> true | uu___ -> false
 type steps = step Prims.list
 let rec (eq_step : step -> step -> Prims.bool) =
   fun s1 ->

@@ -1083,6 +1083,7 @@ type norm_step =
   | UnfoldFully of Prims.string Prims.list 
   | UnfoldAttr of Prims.string Prims.list 
   | NBE 
+  | OnExtractionOnly 
 let (uu___is_Simpl : norm_step -> Prims.bool) =
   fun projectee -> match projectee with | Simpl -> true | uu___ -> false
 let (uu___is_Weak : norm_step -> Prims.bool) =
@@ -1118,6 +1119,9 @@ let (__proj__UnfoldAttr__item___0 : norm_step -> Prims.string Prims.list) =
   fun projectee -> match projectee with | UnfoldAttr _0 -> _0
 let (uu___is_NBE : norm_step -> Prims.bool) =
   fun projectee -> match projectee with | NBE -> true | uu___ -> false
+let (uu___is_OnExtractionOnly : norm_step -> Prims.bool) =
+  fun projectee ->
+    match projectee with | OnExtractionOnly -> true | uu___ -> false
 let (steps_Simpl : FStar_Syntax_Syntax.term) =
   FStar_Syntax_Syntax.tconst FStar_Parser_Const.steps_simpl
 let (steps_Weak : FStar_Syntax_Syntax.term) =
@@ -1144,6 +1148,8 @@ let (steps_UnfoldAttr : FStar_Syntax_Syntax.term) =
   FStar_Syntax_Syntax.tconst FStar_Parser_Const.steps_unfoldattr
 let (steps_NBE : FStar_Syntax_Syntax.term) =
   FStar_Syntax_Syntax.tconst FStar_Parser_Const.steps_nbe
+let (steps_OnExtractionOnly : FStar_Syntax_Syntax.term) =
+  FStar_Syntax_Syntax.tconst FStar_Parser_Const.steps_on_extraction_only
 let (e_norm_step : norm_step embedding) =
   let t_norm_step =
     let uu___ = FStar_Ident.lid_of_str "FStar.Syntax.Embeddings.norm_step" in
@@ -1168,7 +1174,6 @@ let (e_norm_step : norm_step embedding) =
          | Zeta -> steps_Zeta
          | ZetaFull -> steps_ZetaFull
          | Iota -> steps_Iota
-         | NBE -> steps_NBE
          | Reify -> steps_Reify
          | UnfoldOnly l ->
              let uu___1 =
@@ -1199,7 +1204,9 @@ let (e_norm_step : norm_step embedding) =
                    uu___4 rng FStar_Pervasives_Native.None norm in
                  FStar_Syntax_Syntax.as_arg uu___3 in
                [uu___2] in
-             FStar_Syntax_Syntax.mk_Tm_app steps_UnfoldAttr uu___1 rng) in
+             FStar_Syntax_Syntax.mk_Tm_app steps_UnfoldAttr uu___1 rng
+         | NBE -> steps_NBE
+         | OnExtractionOnly -> steps_OnExtractionOnly) in
   let un t0 w norm =
     let t = FStar_Syntax_Util.unmeta_safe t0 in
     lazy_unembed printer1 emb_t_norm_step t t_norm_step
@@ -1292,6 +1299,10 @@ let (e_norm_step : norm_step embedding) =
                        FStar_All.pipe_left
                          (fun uu___4 -> FStar_Pervasives_Native.Some uu___4)
                          (UnfoldAttr ss))
+              | (FStar_Syntax_Syntax.Tm_fvar fv, []) when
+                  FStar_Syntax_Syntax.fv_eq_lid fv
+                    FStar_Parser_Const.steps_on_extraction_only
+                  -> FStar_Pervasives_Native.Some OnExtractionOnly
               | uu___2 ->
                   (if w
                    then

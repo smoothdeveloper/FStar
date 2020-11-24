@@ -1610,6 +1610,8 @@ let (tr_norm_step :
         (FStar_TypeChecker_Env.UnfoldUntil FStar_Syntax_Syntax.delta_constant)
           :: uu___1
     | FStar_Syntax_Embeddings.NBE -> [FStar_TypeChecker_Env.NBE]
+    | FStar_Syntax_Embeddings.OnExtractionOnly ->
+        [FStar_TypeChecker_Env.OnExtractionOnly]
 let (tr_norm_steps :
   FStar_Syntax_Embeddings.norm_step Prims.list ->
     FStar_TypeChecker_Env.step Prims.list)
@@ -1627,7 +1629,7 @@ let get_norm_request :
     FStar_TypeChecker_Cfg.cfg ->
       (FStar_Syntax_Syntax.term -> FStar_Syntax_Syntax.term) ->
         (FStar_Syntax_Syntax.term * 'uuuuu) Prims.list ->
-          (FStar_TypeChecker_Env.step Prims.list * FStar_Syntax_Syntax.term)
+          (FStar_TypeChecker_Env.steps * FStar_Syntax_Syntax.term)
             FStar_Pervasives_Native.option
   =
   fun cfg ->
@@ -1687,8 +1689,15 @@ let get_norm_request :
             (match uu___3 with
              | FStar_Pervasives_Native.None -> FStar_Pervasives_Native.None
              | FStar_Pervasives_Native.Some s ->
-                 FStar_Pervasives_Native.Some
-                   ((FStar_List.append inherited_steps s), tm))
+                 if
+                   (FStar_List.mem FStar_TypeChecker_Env.OnExtractionOnly s)
+                     &&
+                     (Prims.op_Negation
+                        (cfg.FStar_TypeChecker_Cfg.steps).FStar_TypeChecker_Cfg.for_extraction)
+                 then FStar_Pervasives_Native.None
+                 else
+                   FStar_Pervasives_Native.Some
+                     ((FStar_List.append inherited_steps s), tm))
         | uu___ -> FStar_Pervasives_Native.None
 let (nbe_eval :
   FStar_TypeChecker_Cfg.cfg ->
