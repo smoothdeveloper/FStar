@@ -1159,7 +1159,7 @@ let ch : Type u#1 = (p:dprot & channel p)
 
 let ep (name:party) (c:ch) (next:dprot) = endpt name (dsnd c) next
 
-#push-options "--fuel 2 --ifuel 2"
+#push-options "--fuel 3 --ifuel 3"
 
 let new_channel' (p:dprot)
   : SteelT (channel p & channel p) emp

@@ -116,7 +116,7 @@ let nllist_of_llist0
     (fun res -> nllist a res r)
     (fun _ -> True)
     (fun h0 res h1 ->
-      h0 (llist0 r) == h1 (nllist a res r)
+      h0 (llist0 r) === h1 (nllist a res r)
     )
 =
   if is_null r
@@ -155,7 +155,7 @@ let llist0_of_nllist
     (fun _ -> llist0 r)
     (fun _ -> True)
     (fun h0 res h1 ->
-      h1 (llist0 r) == h0 (nllist a n r)
+      h1 (llist0 r) === h0 (nllist a n r)
     )
 =
   if is_null r
